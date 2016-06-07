@@ -17,6 +17,10 @@ exports.handleError = function (res, err) {
 
 
 exports.ensureAuthenticated = function(req, res, next) {
+    if (!req.headers.authorization && req.method=="OPTIONS") {
+        return res.status(200).send({message: req.method});
+    }
+
   if (!req.headers.authorization) {
     return res.status(401).send({ message: 'Please make sure your request has an Authorization header' });
   }
