@@ -5,6 +5,7 @@ var authUtils = require('./authUtils');
 var User = require('./user.model.js');
 
 exports.getMe = function (req, res) {
+    console.log(req.user);
     User.findById(req.user, function (err, user) {
         if (!user) {
             return res.status(404).send({message: 'User not found'});

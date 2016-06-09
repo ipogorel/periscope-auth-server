@@ -3,10 +3,11 @@ var bcrypt = require('bcryptjs');
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-
+//unique: true,
 var schema = new Schema({
-    email: { type: String, unique: true, lowercase: true },
+    email: { type: String, lowercase: true },
     password: { type: String, select: false },
+    role: String,
     displayName: String,
     picture: String,
     facebook: String,

@@ -1,6 +1,7 @@
 var config = require('./config.global');
 
 config.env = "production";
+config.defaultRole = "member";
 config.port = 10000;
 config.mongo = {};
 config.mongo.connectionstring = 'mongodb://localhost/' + 'aureliauth-production';
