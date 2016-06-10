@@ -1,4 +1,5 @@
 'use strict';
+var config = require('../config');
 var bcrypt = require('bcryptjs');
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
@@ -7,7 +8,7 @@ var mongoose = require('mongoose'),
 var schema = new Schema({
     email: { type: String, lowercase: true },
     password: { type: String, select: false },
-    role: String,
+    role: {type: String, default:config.defaultRole},
     displayName: String,
     picture: String,
     facebook: String,

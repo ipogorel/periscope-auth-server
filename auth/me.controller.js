@@ -21,6 +21,7 @@ exports.updateMe = function (req, res) {
         }
         user.displayName = req.body.displayName || user.displayName;
         user.email = req.body.email || user.email;
+        user.role = req.body.role || user.role;
         user.save(function (err) {
             res.status(200).end();
         });
