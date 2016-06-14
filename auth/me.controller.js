@@ -4,6 +4,15 @@ var jwt = require('jwt-simple');
 var authUtils = require('./authUtils');
 var User = require('./user.model.js');
 
+exports.getRoles = function (req, res) {
+    User.findById(req.user, function (err, user) {
+        if (!user) {
+            return res.status(404).send({message: 'User not found'});
+        }
+        res.send([user.role]);
+    });
+}
+
 exports.getMe = function (req, res) {
     console.log(req.user);
     User.findById(req.user, function (err, user) {

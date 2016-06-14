@@ -34,6 +34,7 @@ router.put('/me',authUtils.ensureAuthenticated, meController.updateMe );
 */
 router.use(authUtils.ensureAuthenticated); //auth only appied for following paths, not the paths above
 router.get('/me', meController.getMe );
+router.get('/roles', meController.getRoles );
 router.put('/me', meController.updateMe );
 router.get('/unlink/:provider', meController.unlink);
 module.exports = router;
