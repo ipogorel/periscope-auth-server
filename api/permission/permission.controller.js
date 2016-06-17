@@ -33,8 +33,8 @@ exports.index = function (req, res) {
             if (err)
                 return res.status(500).send(err);
 
-            logger.log('info',jbuser);
-            
+            //logger.log('info',jbuser.projectRoles);
+
             if (!jbuser.projectRoles)
                 return res.status(403).send({ message: 'User has no access to read roles' });
 
@@ -44,8 +44,9 @@ exports.index = function (req, res) {
                 roles.push("role:" + jbuser.projectRoles[i].role.id)
             }
             permissionsQuery = "("+ permissionsQuery + " and (" + roles.join(" or ") + ")" + ")"
+            //logger.log('info','/permissions?query=' + permissionsQuery);
             request({ url: hubUtils.createHubUrl('/permissions?query=' + permissionsQuery), method: 'GET', headers: headers, json: true},function (err, response, data) {
-                logger.log('info',data.permissions);
+                //logger.log('info',data.permissions);
                 var result = _.map(data.permissions, function (p) {
                     return p.key;
                 })
