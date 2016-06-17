@@ -18,7 +18,9 @@ var schema = new Schema({
     linkedin: String,
     live: String,
     yahoo: String,
-    twitter: String
+    twitter: String,
+    jetbrains: String,
+    jetbrainsToken: String
 
 });
 schema.pre('save', function(next) {

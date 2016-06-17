@@ -5,6 +5,7 @@ var authUtils = require('./authUtils');
 var authController = require('./auth.controller.js');
 var meController = require('./me.controller.js');
 var identSrv = require('./identSrv.js');
+var jetbrains = require('./jetbrains.js');
 var google = require('./google.js');
 var linkedin = require('./linkedin.js');
 var twitter = require('./twitter.js');
@@ -25,7 +26,10 @@ router.post('/github', github.authenticate);
 router.post('/live', live.authenticate);
 router.post('/yahoo', yahoo.authenticate);
 router.post('/foursquare', foursquare.authenticate);
+router.post('/jetbrains', jetbrains.authenticate);
 router.post('/identSrv', identSrv.authenticate);
+
+
 
 
 //TODO implement ensureAuthenticated
