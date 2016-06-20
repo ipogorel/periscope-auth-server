@@ -28,9 +28,11 @@ exports.authenticate = function (req, res) {
     // Step 1. Exchange authorization code for access token.
 
     request.post(accessTokenUrl, { json: true, form: params,headers:authHeader }, function (err, response, token) {
+        logger.log("info",token);
         var accessToken = token.access_token;
+        var expiresInSeconds = token.expires_in;
         var headers = { Authorization: 'Bearer ' + accessToken, connection: 'keep-alive', 'Content-Type': 'application/json'  };
-        logger.log('info', accessToken);
+        
         // Step 2. Retrieve profile information about the current user.
         if (err)
             logger.log('error', err);
@@ -55,7 +57,7 @@ exports.authenticate = function (req, res) {
                             user.jetbrainsToken = accessToken;
                             user.displayName = user.displayName || profile.name;
                             user.save(function () {
-                                var token = authUtils.createJWT(user);
+                                var token = authUtils.createJWT(user, expiresInSeconds);
                                 res.send({ token: token });
                             });
                         });
@@ -66,14 +68,14 @@ exports.authenticate = function (req, res) {
                         if (existingUser) {
                             existingUser.jetbrainsToken = accessToken;
                             existingUser.save();
-                            return res.send({ token: authUtils.createJWT(existingUser) });
+                            return res.send({ token: authUtils.createJWT(existingUser, expiresInSeconds) });
                         }
                         var user = new User();
                         user.jetbrains = profile.id;
                         user.jetbrainsToken = accessToken;
                         user.displayName = profile.name;
                         user.save(function (err) {
-                            var token = authUtils.createJWT(user);
+                            var token = authUtils.createJWT(user, expiresInSeconds);
                             res.send({ token: token });
                         });
                     });

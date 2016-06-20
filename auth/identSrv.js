@@ -20,12 +20,13 @@ exports.authenticate = function (req, res) {
 
     // Step 1. Exchange authorization code for access token.
     request.post(accessTokenUrl, { json: true, form: params }, function (err, response, token) {
-        var accessToken = token.access_token;
+        if (err)
+            return res.status(500).send({ message: 'Error on getting the access token' });
 
+        var accessToken = token.access_token;
         var headers = { Authorization: 'Bearer ' + accessToken, connection: 'keep-alive'  };
 
         // Step 2. Retrieve profile information about the current user.
-
         request({ url: peopleApiUrl, method: 'GET', headers: headers},
             function (err, response, profile) {
 

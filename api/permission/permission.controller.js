@@ -40,7 +40,7 @@ exports.index = function (req, res) {
             if (!jbuser.projectRoles)
                 return res.status(403).send({ message: 'User has no access to read roles' });
 
-            var permissionsQuery = "service:" + config.JETBRAINSHUB_SERVICEID;
+            var permissionsQuery = "service:" + config.JETBRAINSHUB_CLIENTID;
             var roles = [];
             for (var i=0;i<jbuser.projectRoles.length;i++){
                 roles.push("role:" + jbuser.projectRoles[i].role.id)
