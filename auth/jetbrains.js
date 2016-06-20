@@ -16,11 +16,11 @@ exports.authenticate = function (req, res) {
     var params = {
         code: req.body.code,
         client_id: req.body.clientId,
-        client_secret: config.IDENTSRV_SECRET,
+        client_secret: config.JETBRAINSHUB_SECRET,
         redirect_uri: req.body.redirectUri,
         grant_type: 'authorization_code'
     };
-    var credentials = new Buffer(req.body.clientId + ":" + config.IDENTSRV_SECRET).toString('base64');
+    var credentials = new Buffer(req.body.clientId + ":" + config.JETBRAINSHUB_SECRET).toString('base64');
     var authHeader= { Authorization: 'Basic '+ credentials, connection: 'keep-alive'  };
 
 
