@@ -40,7 +40,7 @@ var model = (function(){
             if (!this._id)
                 this._id = guid.createGuid();
             var jsonData = jsonfile.readFileSync(file);
-            var usr = _.find(jsonData,{"id":this._id});
+            var usr = _.find(jsonData,{"_id":this._id});
             var isNew = false;
             if (!usr){
                 usr = {};
