@@ -1,5 +1,6 @@
 'use strict';
-var User = require('./user.model.js');
+//var User = require('./user.model.js');
+var User = require('./user.model.file.js');
 var config = require('../config');
 var request = require('request');
 var jwt = require('jwt-simple');
@@ -9,6 +10,7 @@ var hubUtils = require('../utils/hubUtils');
 
 
 exports.authenticate = function (req, res) {
+
     var accessTokenUrl = hubUtils.createHubUrl('/oauth2/token');
     var peopleApiUrl = hubUtils.createHubUrl('/users/me');
 
@@ -22,8 +24,7 @@ exports.authenticate = function (req, res) {
     };
     var credentials = new Buffer(req.body.clientId + ":" + config.JETBRAINSHUB_SECRET).toString('base64');
     var authHeader= { Authorization: 'Basic '+ credentials, connection: 'keep-alive'  };
-
-
+    
 
     // Step 1. Exchange authorization code for access token.
 
@@ -32,7 +33,7 @@ exports.authenticate = function (req, res) {
         var accessToken = token.access_token;
         var expiresInSeconds = token.expires_in;
         var headers = { Authorization: 'Bearer ' + accessToken, connection: 'keep-alive', 'Content-Type': 'application/json'  };
-        
+
         // Step 2. Retrieve profile information about the current user.
         if (err)
             logger.log('error', err);

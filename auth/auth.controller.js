@@ -1,6 +1,7 @@
 'use strict';
 var _ = require('lodash');
-var Entity = require('./user.model.js');
+//var Entity = require('./user.model.js');
+var Entity = require('./user.model.file.js');
 var jwt = require('jwt-simple');
 var authUtils = require('./authUtils');
 exports.signup = function (req, res) {
@@ -17,6 +18,7 @@ exports.signup = function (req, res) {
         user.save(function () {
             return res.status(201).json({token: authUtils.createJWT(user)});
         });
+        
     });
 };
 

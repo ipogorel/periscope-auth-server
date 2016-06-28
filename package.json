@@ -24,6 +24,7 @@
     "gulp-nodemon": "^2.0.7",
     "gulp-plumber": "^1.1.0",
     "gulp-protractor": "^2.4.0",
+    "jsonfile": "^2.3.1",
     "jwt-simple": "^0.3.0",
     "lodash": "^3.5.0",
     "method-override": "^2.3.2",
@@ -36,5 +37,7 @@
     "url": "^0.11.0",
     "winston": "^2.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prompt": "^1.0.0"
+  }
 }

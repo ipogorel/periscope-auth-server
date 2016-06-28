@@ -1,5 +1,6 @@
 'use strict';
-var User = require('./user.model.js');
+//var User = require('./user.model.js');
+var User = require('./user.model.file.js');
 var config = require('../config');
 var request = require('request');
 var jwt = require('jwt-simple');

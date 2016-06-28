@@ -2,7 +2,8 @@
 var _ = require('lodash');
 var jwt = require('jwt-simple');
 var authUtils = require('./authUtils');
-var User = require('./user.model.js');
+//var User = require('./user.model.js');
+var User = require('./user.model.file.js');
 
 exports.getRoles = function (req, res) {
     User.findById(req.user, function (err, user) {

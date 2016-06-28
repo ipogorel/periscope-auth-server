@@ -21,7 +21,6 @@ var schema = new Schema({
     twitter: String,
     jetbrains: String,
     jetbrainsToken: String
-
 });
 schema.pre('save', function(next) {
     var user = this;
