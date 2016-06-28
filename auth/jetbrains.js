@@ -29,19 +29,21 @@ exports.authenticate = function (req, res) {
     // Step 1. Exchange authorization code for access token.
 
     request.post(accessTokenUrl, { json: true, form: params,headers:authHeader }, function (err, response, token) {
-        logger.log("info",token);
+        if ((response.statusCode!=200)||(err)) {
+            logger.log("error", response);
+            return res.status(response.statusCode).send({ message: 'Hub error: ' + response.body.error_description});
+        }
         var accessToken = token.access_token;
         var expiresInSeconds = token.expires_in;
         var headers = { Authorization: 'Bearer ' + accessToken, connection: 'keep-alive', 'Content-Type': 'application/json'  };
 
         // Step 2. Retrieve profile information about the current user.
-        if (err)
-            logger.log('error', err);
 
         request({ url: peopleApiUrl, method: 'GET', headers: headers, json: true},
             function (err, response, profile) {
-                if (err) {
-                    console.log("error : " + err);
+                if ((response.statusCode!=200)||(err)) {
+                    logger.log("error", response);
+                    return res.status(response.statusCode).send({ message: 'Hub error: ' + response.body.error_description });
                 }
                 if (req.headers.authorization) {
                     User.findOne({ "jetbrains": profile.id }, function (err, existingUser) {

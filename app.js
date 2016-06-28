@@ -14,10 +14,9 @@ var config = require('./config');
 // Connect to database
 
 
-var connectionString = config.mongo.connectionstring;
-
-console.log("connection string : " + connectionString);
-mongoose.connect(connectionString);
+//var connectionString = config.mongo.connectionstring;
+//console.log("connection string : " + connectionString);
+//mongoose.connect(connectionString);
 
 // Setup server
 var app = express();
