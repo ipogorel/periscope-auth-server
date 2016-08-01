@@ -6,11 +6,16 @@ var config = require('../../config');
 
 gulp.task('setup', function(done) {
     console.log('########### enter jetbrains hub admin username and password: ###########')
-    hubClient.configure(config.JETBRAINSHUB_APIBASEURL, "admin", "admin123");
-    setupSequence.run(hubClient).then(function(result){
-        var a = result;
-        done();
+    prompt.get(['username', 'password'], function (err, result) {
+        hubClient.configure(config.JETBRAINSHUB_APIBASEURL, result.username, result.password);
+        setupSequence.run(hubClient).then(function () {
+            console.log("setup completed successfully");
+            done();
+        })
     });
 });
+
+
+
 
 

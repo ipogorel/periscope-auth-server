@@ -4,7 +4,7 @@ var createRoles = require('./create-role-async');
 var createProjects = require('./create-project-async');
 var createUsergroups = require('./create-usergroup-async');
 var createUsergroupRoles = require('./create-usergroup-roles-async');
-var createUsers = require('./create-users-async');
+//var createUsers = require('./create-users-async');
 
 exports.run = function(hubClient) {
     return createServices.run(hubClient).then(function(services){
@@ -13,9 +13,10 @@ exports.run = function(hubClient) {
                 return createProjects.run(hubClient).then(function(roles) {
                     return createUsergroups.run(hubClient).then(function(groups) {
                         return createUsergroupRoles.run(hubClient).then(function(groupRoles) {
-                            return createUsers.run(hubClient).then(function(users) {
+                            return "done";
+                            /*return createUsers.run(hubClient).then(function(users) {
                                 return "done";
-                            })
+                            })*/
                         })
                     })
                 })
