@@ -1,4 +1,7 @@
-{
-  "login": "developer",
-  "banned": false
-}
+[{
+  "login": "periscope-user",
+  "banned": false,
+  "groups":[{
+    "name":"periscope-developers-group"
+  }]
+}]

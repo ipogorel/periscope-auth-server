@@ -1,48 +1,7 @@
-{
-  "key": "periscope",
-  "name": "periscope",
+[{
+    "key": "periscope",
+    "name": "periscope",
+    "trusted": true,
     "homeUrl": "http://localhost:9000",
-    "redirectUris":["http://localhost:9000"],
-    "permissions":[{
-        "key": "read-customers",
-        "name": "read customers",
-        "entityType": "customers",
-        "operation": "read"
-      },{
-        "key": "write-customers",
-        "name": "write customers",
-        "entityType": "customers",
-        "operation": "write"
-      },{
-        "key": "read-orders",
-        "name": "read orders",
-        "entityType": "orders",
-        "operation": "read"
-      },{
-        "key": "write-orders",
-        "name": "write orders",
-        "entityType": "orders",
-        "operation": "write"
-      },{
-        "key": "read-products",
-        "name": "read products",
-        "entityType": "products",
-        "operation": "read"
-      },{
-        "key": "write-products",
-        "name": "write products",
-        "entityType": "products",
-        "operation": "write"
-      },{
-        "key": "read-sales",
-        "name": "read sales",
-        "entityType": "sales",
-        "operation": "read"
-      },{
-        "key": "write-sales",
-        "name": "write sales",
-        "entityType": "sales",
-        "operation": "write"
-      }
-    ]
-}
+    "redirectUris":["http://localhost:9000"]
+}]

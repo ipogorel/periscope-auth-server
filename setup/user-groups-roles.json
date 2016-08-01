@@ -1,0 +1,9 @@
+[{
+  "name": "periscope-developers-group",
+  "project":{
+    "key":"periscope-demo-project"
+  },
+  "role":{
+    "key":"periscope-developer"
+  }
+}]

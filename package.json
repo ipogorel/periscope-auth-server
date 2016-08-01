@@ -33,6 +33,7 @@
     "morgan": "^1.6.0",
     "proxy-middleware": "^0.15.0",
     "request": "^2.58.0",
+    "request-promise": "^4.0.2",
     "require-dir": "^0.3.0",
     "url": "^0.11.0",
     "winston": "^2.2.0"

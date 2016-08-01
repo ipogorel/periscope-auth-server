@@ -1,0 +1,66 @@
+[{
+  "key": "read-customers",
+  "name": "read customers",
+  "entityType": "customers",
+  "operation": "read",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "write-customers",
+  "name": "write customers",
+  "entityType": "customers",
+  "operation": "write",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "read-orders",
+  "name": "read orders",
+  "entityType": "orders",
+  "operation": "read",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "write-orders",
+  "name": "write orders",
+  "entityType": "orders",
+  "operation": "write",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "read-products",
+  "name": "read products",
+  "entityType": "products",
+  "operation": "read",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "write-products",
+  "name": "write products",
+  "entityType": "products",
+  "operation": "write",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "read-sales",
+  "name": "read sales",
+  "entityType": "sales",
+  "operation": "read",
+  "service":{
+    "key":"periscope"
+  }
+},{
+  "key": "write-sales",
+  "name": "write sales",
+  "entityType": "sales",
+  "operation": "write",
+  "service":{
+    "key":"periscope"
+  }
+}
+]

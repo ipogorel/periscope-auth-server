@@ -1,4 +1,18 @@
-{
+[{
     "key": "periscope-developer",
-    "name": "periscope-developer"
-}
+    "name": "periscope-developer",
+    "permissions":[
+        { "key": "read-customers" },
+        { "key": "write-customers" },
+        { "key": "read-orders" },
+        { "key": "write-orders" },
+        { "key": "read-products" },
+        { "key": "write-products" },
+        { "key": "read-sales" },
+        { "key": "write-sales" },
+        { "key": "write-sales" },
+        { "key": "jetbrains.jetpass.role-read" },
+        { "key": "jetbrains.jetpass.service-read" },
+        { "key": "jetbrains.jetpass.profile-readSelf" }
+    ]
+}]

@@ -18,8 +18,8 @@ config.TWITTER_SECRET = process.env.TWITTER_SECRET || 'Twitter Consumer Secret';
 config.TWITTER_CALLBACK = process.env.TWITTER_CALLBACK || 'Twitter Callback URL';
 config.YAHOO_SECRET = process.env.YAHOO_SECRET || 'Yahoo Client Secret';
 
-config.JETBRAINSHUB_CLIENTID = process.env.JETBRAINSHUB_CLIENTID || 'cf07b66c-57d1-4cee-8407-e8c9b06e5293';
-config.JETBRAINSHUB_SECRET = process.env.JETBRAINSHUB_SECRET || 'IMqPRNJsDHD5';
+config.JETBRAINSHUB_CLIENTID = process.env.JETBRAINSHUB_CLIENTID || '477b3ff8-8f8e-42ed-8898-dc2ac5308977';
+config.JETBRAINSHUB_SECRET = process.env.JETBRAINSHUB_SECRET || 'ZiaL1dD3QgHd';
 config.JETBRAINSHUB_APIBASEURL= "http://localhost:8080/hub/api/rest";
 
 
