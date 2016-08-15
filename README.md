@@ -1,10 +1,9 @@
 # periscope-auth-server
 Sample auth server for [periscope-demo-app](https://github.com/privosoft/periscope-demo-app).
-Uses a NodeJs backend with mongoDb.
+Uses a NodeJs backend
 ## Requirements
 1. NodeJs
-2. You need an running MongoDb server.
-3. Gulp
+2. Gulp
 
 ## How to run?
 
