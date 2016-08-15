@@ -6,7 +6,8 @@ var browserSync = require('browser-sync');
 gulp.task('node', function () {
     var nodeOptions = {
         script: paths.nodeStartUpScriptPath,
-        delayTime: 1
+        delayTime: 1,
+        ignore: ["data/*.json","setup/*.json"]
     };
     
     nodemon(nodeOptions)
